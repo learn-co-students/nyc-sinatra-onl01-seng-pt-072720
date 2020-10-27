@@ -12,20 +12,20 @@
     <br><br>
     <h2>Create New Title</h2>
     <br>
-    <input type="text" id="title_name" name="title[name]">
+    <input type="text" id="new_title" name="title[name]">
 
     <br><br>
     <h2>Landmarks</h2>
     <br>
     <% Landmark.all.each do |landmark| %>
-        <input type="checkbox" name="figure[landmark_ids][]" id="landmark_<%= landmark.id %>" value="<% landmark.id %>"><%= landmark.name %><br>
+        <input type="checkbox" name="figure[landmark_ids][]" id="landmark_<%= landmark.id %>" value="<%= landmark.id %>"><%= landmark.name %><br>
     <% end %>
 
     <br><br>
     <h2>Create New Landmark</h2>
     <br>
-    <label for="landmark_name">Name: </label>
-    <input type="text" id="landmark_name" name="landmark[name]"><br>
+    <label for="new_landmark">Name: </label>
+    <input type="text" id="new_landmark" name="landmark[name]"><br>
 
     <label for="landmark_year">Year: </label>
     <input type="text" id="landmark_year" name="landmark[year_completed]"><br>
