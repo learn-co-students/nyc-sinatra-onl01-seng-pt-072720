@@ -6,15 +6,16 @@ class FiguresController < ApplicationController
   post '/figures' do 
     # binding.pry 
     @figure = Figure.create(params[:figure])
+    
     if !params[:title][:name].empty?
-      @title = Title.create(params[:title])
-      @figure.title_ids << params[:title][:id]
+      @figure.titles << Title.create(params[:title])
     end 
-
+        
+    # binding.pry
     if !params[:landmark][:name].empty? && !params[:landmark][:year_completed].empty?
-      @landmark = Landmark.create(params[:landmark])
-      @figure.landmark_ids << params[:landmarks]
+      @figure.landmarks << Landmark.create(params[:landmark])
     end 
+    @figure.landmarks << params[:landmarks]
 
     redirect to "/figures/#{@figure.id}"
   end 
