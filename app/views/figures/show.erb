@@ -1,0 +1,13 @@
+<h1><%= @figure.name %></h1>
+
+<% @figure.titles.each do |title| %>
+    <%= title.name %>
+<% end %>
+
+<h3>Can be found at the following:</h3>
+<% @figure.landmarks.each do |landmark| %>
+    <%= landmark.name %>
+<% end %>
+
+<br><a href="/figures/<%= @figure.id %>/edit">Edit this Figure</a><br>
+<br><a href="/figures">View All Figures</a><br>
